@@ -1,0 +1,5 @@
+env2/
+__pycache__/
+*.joblib
+
+model.joblib
