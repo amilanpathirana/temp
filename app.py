@@ -20,11 +20,11 @@ local = 1
 clf = joblib.load('filename.pkl')
 
 app = Flask(__name__)
-mysql = MySQL(app)
-app.config['MYSQL_HOST'] = 'localhost'
-app.config['MYSQL_USER'] = 'root'
-app.config['MYSQL_PASSWORD'] = 'amila123'
-app.config['MYSQL_DB'] = 'submissions_db'
+#mysql = MySQL(app)
+#app.config['MYSQL_HOST'] = 'localhost'
+#app.config['MYSQL_USER'] = 'root'
+#app.config['MYSQL_PASSWORD'] = 'amila123'
+#app.config['MYSQL_DB'] = 'submissions_db'
 
 
 MAKES = [
@@ -83,9 +83,9 @@ def calculate():
 
         return render_template('index.html', message="Invalid Input",  makes=MAKES, years=YEARS)
 
-    cur = mysql.connection.cursor()
-    cur.execute(
-        "INSERT INTO submissions (name, make) VALUES(%s,%s)", (name, make))
-    mysql.connection.commit()
-    cur.close()
+    #cur = mysql.connection.cursor()
+    # cur.execute(
+    #    "INSERT INTO submissions (name, make) VALUES(%s,%s)", (name, make))
+    # mysql.connection.commit()
+    # cur.close()
     return render_template('results.html', prediction=prediction)
