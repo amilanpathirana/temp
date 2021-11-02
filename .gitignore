@@ -1,5 +1,7 @@
 env2/
+
 __pycache__/
 *.joblib
+*.pkl
 
 model.joblib
